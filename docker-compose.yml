@@ -12,6 +12,8 @@ services:
       - VPN_SERVICE_PROVIDER=custom
       - VPN_TYPE=wireguard
       - FIREWALL=on
+      - DNS_UPSTREAM_RESOLVER_TYPE=dot
+      - DNS_UPSTREAM_RESOLVERS=quad9
     sysctls:
       - net.ipv4.ip_forward=1
     restart: unless-stopped
