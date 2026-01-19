@@ -1,0 +1,6 @@
+# Secrets
+.env
+wg.conf
+
+# Tailscale state
+state/
