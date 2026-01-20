@@ -28,6 +28,8 @@ services:
     cap_add:
       - NET_ADMIN
       - NET_RAW
+    devices:
+      - /dev/net/tun:/dev/net/tun
     volumes:
       - ./state:/var/lib/tailscale
     environment:
@@ -35,6 +37,5 @@ services:
       - TS_HOSTNAME=${TS_HOSTNAME:-proton-exit}
       - TS_STATE_DIR=/var/lib/tailscale
       - TS_EXTRA_ARGS=--advertise-exit-node --accept-routes
-      - TS_USERSPACE=true
       - TS_ACCEPT_DNS=false
     restart: unless-stopped
